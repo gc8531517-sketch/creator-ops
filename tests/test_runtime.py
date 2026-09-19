@@ -16,7 +16,7 @@ class RuntimeTests(unittest.TestCase):
     def test_config_is_relative_to_its_own_location(self):
         path = self.root / 'config.json'
         atomic_json(path, {'schema_version': 1, 'data_dir': 'data'})
-        self.assertEqual(load_config(path)['data_dir'], str(self.root / 'data'))
+        self.assertEqual(load_config(path)['data_dir'], str((self.root / 'data').resolve()))
 
     def test_credentials_not_accepted(self):
         path = self.root / 'config.json'
