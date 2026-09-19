@@ -56,4 +56,4 @@ node tests/extension/background.test.js
 
 本项目不提供播放预测、小时监控、固定聊天自动推送或无人审批的评论发送。电脑关机、休眠或退出登录期间不能采集；浏览器页面变化和权限失效可能需要维护。单个安装实例运营一个账号，不支持多机同时写同一数据区。
 
-拟采用 [MIT License](LICENSE)。项目来源与外部依赖见 [PROVENANCE](docs/PROVENANCE.md)，隐私与报告规则见 [SECURITY](SECURITY.md)。公开仓库地址、署名和许可证最终由用户审核。
+采用 [MIT License](LICENSE)。项目来源与外部依赖见 [PROVENANCE](docs/PROVENANCE.md)，隐私与报告规则见 [SECURITY](SECURITY.md)。
