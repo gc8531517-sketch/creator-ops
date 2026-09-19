@@ -29,6 +29,29 @@ class AssetTests(unittest.TestCase):
         self.spec['confirmed'] = False
         with self.assertRaises(ValueError): ca.archive(self.root, self.spec)
 
+    def test_noncanonical_root(self):
+        child = self.root / 'nested'
+        child.mkdir()
+        alias = child / '..'
+        result = ca.archive(alias, self.spec)
+        self.assertEqual(result['status'], 'archived')
+        folder = ca.folder_path(alias, self.spec['folder'])
+        ca.refresh(alias, folder, ca.load_manifest(folder))
+        self.assertEqual(ca.archive(alias, self.spec)['status'], 'already_archived')
+
+    @unittest.skipUnless(__import__('os').name == 'nt', 'Windows short paths only')
+    def test_windows_short_root(self):
+        import ctypes
+        buffer = ctypes.create_unicode_buffer(32768)
+        fn = ctypes.windll.kernel32.GetShortPathNameW
+        fn.argtypes = [ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_uint32]
+        fn.restype = ctypes.c_uint32
+        self.assertGreater(fn(str(self.root), buffer, len(buffer)), 0)
+        alias = Path(buffer.value)
+        result = ca.archive(alias, self.spec)
+        self.assertTrue((self.root / result['asset']['archived_path']).is_file())
+        self.assertEqual(ca.archive(alias, self.spec)['status'], 'already_archived')
+
     def test_same_version_changed(self):
         ca.archive(self.root, self.spec)
         self.source.write_text('changed', encoding='utf-8')

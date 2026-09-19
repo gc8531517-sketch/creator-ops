@@ -60,6 +60,7 @@ def load_manifest(folder):
 
 
 def validate_index(root, folder, ident):
+    root = Path(root).resolve()
     index = root / '视频资产/作品关联索引.md'
     text = index.read_text(encoding='utf-8') if index.exists() else '# 作品关联索引\n'
     if ident:
@@ -71,6 +72,7 @@ def validate_index(root, folder, ident):
 
 
 def refresh(root, folder, manifest):
+    root = Path(root).resolve()
     # Manifest is authoritative. A failed projection is repairable by repeating the command.
     page = folder / '00_资产索引.md'
     old = page.read_text(encoding='utf-8') if page.exists() else '# 作品资产索引\n'
@@ -102,6 +104,8 @@ def refresh(root, folder, manifest):
 
 
 def archive(root, spec):
+    # Windows short (8.3) paths and resolved destinations must share one spelling.
+    root = Path(root).resolve()
     required = ('folder', 'source', 'kind', 'version', 'confirmation_ref', 'confirmation_quote')
     if any(not isinstance(spec.get(k), str) or not spec[k].strip() for k in required):
         raise ValueError('缺少文件、作品目录、类型、版本或确认依据')
