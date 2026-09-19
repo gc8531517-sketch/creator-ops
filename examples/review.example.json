@@ -1,0 +1,8 @@
+{
+  "work_id": "1234567890123456789",
+  "node": "72小时",
+  "evidence_sha256": "COPY_CURRENT_EVIDENCE_SHA256",
+  "facts": "填写证据中可核对的事实",
+  "inferences": "填写推断及不确定性；样本不足时明确说明",
+  "next_action": "填写下一次可验证的表达实验，不伪造效果"
+}

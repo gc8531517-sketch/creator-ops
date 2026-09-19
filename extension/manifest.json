@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Creator Ops Export Bridge",
+  "version": "0.2.0",
+  "description": "Clicks the creator-center export button only for an explicit one-time local job URL.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://creator.douyin.com/*"],
+      "js": ["export_core.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

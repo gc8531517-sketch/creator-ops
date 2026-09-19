@@ -1,0 +1,10 @@
+{
+  "folder": "我的作品",
+  "source": "REPLACE_WITH_CONFIRMED_FILE_PATH",
+  "kind": "script",
+  "version": "v1",
+  "work_id": null,
+  "confirmed": false,
+  "confirmation_ref": "REPLACE_WITH_REAL_CONFIRMATION_REFERENCE",
+  "confirmation_quote": "REPLACE_WITH_REAL_USER_CONFIRMATION"
+}

@@ -1,0 +1,8 @@
+{
+  "work_id": "1234567890123456789",
+  "title": "示例标题——请替换为创作者中心的完整标题",
+  "source_url": "https://www.douyin.com/video/1234567890123456789",
+  "published_at": "2026-01-01T12:00:00+08:00",
+  "verified_in_creator_center": false,
+  "identity_evidence": "runtime/your-verified-identity.json"
+}

@@ -1,0 +1,9 @@
+{
+  "work_id": "1234567890123456789",
+  "source": "synthetic demonstration",
+  "captured_at": "2026-01-01T12:00:00+08:00",
+  "demo": true,
+  "comments": [
+    {"id": "synthetic-1", "text": "这是模拟评论：如何开始？", "reply_draft": "这是模拟未发送草稿：先看安装说明。"}
+  ]
+}

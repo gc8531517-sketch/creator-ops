@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "data_dir": "runtime",
+  "download_dir": "",
+  "chrome_path": "",
+  "pwsh_path": "",
+  "node_path": "",
+  "lark_entry": "",
+  "identity": "bot",
+  "base_token": "",
+  "content_table_id": "",
+  "snapshot_table_id": "",
+  "comments_table_id": "",
+  "dashboard_id": ""
+}
